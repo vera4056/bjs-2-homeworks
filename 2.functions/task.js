@@ -71,7 +71,7 @@ function averageEvenElementsWorker(...arr) {
 		}
 	}
 
-	let avg = sumEven / cnt;
+	let avg = sumEven / (cnt || 1);
 
 	return avg;
 
