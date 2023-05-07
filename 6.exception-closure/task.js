@@ -12,7 +12,7 @@ function validateCount(number) {
     try {
         return parseCount(number);
     } catch(e) {
-        return e.message;
+        return e;
     }
 }
 
