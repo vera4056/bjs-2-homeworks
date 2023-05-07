@@ -1,4 +1,22 @@
-﻿class Triangle {
+﻿function parseCount(number) {
+    const result = Number.parseFloat(number);
+
+    if (isNaN(result)) {
+        throw new Error("Невалидное значение");
+    }
+
+    return result;
+}
+
+function validateCount(number) {
+    try {
+        return parseCount(number);
+    } catch(e) {
+        return e.message;
+    }
+}
+
+class Triangle {
     constructor(a, b, c) {
         if ( a + b < c || b + c < a || c + a < b ) {
             throw new Error("Треугольник с такими сторонами не существует");
