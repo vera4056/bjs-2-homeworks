@@ -29,11 +29,11 @@ class Triangle {
     }
     
     get perimeter() {
-        return this._perimeter || "Ошибка! Треугольник не существует";
+        return this._perimeter;
     }
 
     get area() {
-        return this._area || "Ошибка! Треугольник не существует";
+        return this._area;
     }
 
 }
@@ -43,6 +43,16 @@ function getTriangle(a, b, c) {
         const tr = new Triangle(a, b, c);        
         return tr;
     } catch(e) {
-        return tr;
+        const answer = {
+            get perimeter() {
+                return "Ошибка! Треугольник не существует";
+            },
+
+            get area() {
+                return "Ошибка! Треугольник не существует";
+            }
+        };
+
+        return answer;
     }
 }
